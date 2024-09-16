@@ -24,7 +24,5 @@ export async function menu(apikey: string) {
     const units = await standard.units();
 
     const weather = await weatherByCoordinate(apikey, lat, long, units);
-
-    console.log(weather);
     console.log(prettyWeather(weather, units));
 }

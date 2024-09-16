@@ -26,7 +26,6 @@ export async function menu(apikey: string) {
     if (country) search += `,${country}`;
     const units = await standard.units();
     const weather = await weatherByCity(apikey, search, units);
-    console.log(weather);
     console.log(prettyWeather(weather, units));
 }
 

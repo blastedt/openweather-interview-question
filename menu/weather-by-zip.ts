@@ -13,7 +13,6 @@ export async function menu(apikey: string) {
     let search = zip;
     if (country) search += `,${country}`;
     const weather = await weatherByZip(apikey, search, units);
-    console.log(weather);
     console.log(prettyWeather(weather, units));
 
 }
