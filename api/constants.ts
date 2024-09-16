@@ -1,1 +1,1 @@
-export const BASE_URL: string = "http://api.openweathermap.org/geo/1.0/"
+export const BASE_URL: string = "http://api.openweathermap.org/"
