@@ -5,7 +5,7 @@ Afterwards, you can use `npm run run` to compile and run the app.
 
 # API Key configuration
 
-You'll need an API key; one is provided in the email sent to me by Copeland.  The app will ask for a key when you open it.
+You'll need an API key; one is provided in the email sent to me by the company.  The app will ask for a key when you open it.
 
 Set the environment variable `OPENWEATHER_API_KEY` to your API key to skip the API key prompt.
 
