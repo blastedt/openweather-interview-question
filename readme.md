@@ -26,3 +26,14 @@ All API calls are in `./api`.
 All menu logic is in `index.ts` (for the starting menu) and in `./menu` (for submenus).
 
 Weather display logic is in `./lib/prettyprint-weather`
+
+# A note on testing
+
+Most of this repository ended up being display logic, and many functions ended up being just calls to Inquirer.  Testing these functions felt a bit pointless since I'd just be testing that library.
+
+On the other hand, the API call functions in `./api` should be tested before opening a PR to a production repo.
+
+
+# OpenWeather's deprecated API
+
+OpenWeather deprecated their direct geocoding API at some point in the past. It still functions fine, but they say it may go down in the future. I used it for this project because it's much simpler. In production code, or if I was taking a couple more days on this, I would first look up a city's coordinates using the non-deprecated geocoding features, then use those coordinates to make a weather API call.
