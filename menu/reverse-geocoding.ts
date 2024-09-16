@@ -3,20 +3,14 @@ import * as inquirer from "@inquirer/prompts";
 import * as standard from './standard-questions';
 
 function prettyprint_locale_list(res: Locale[]): string {
-    let result = "";
-    for (let loc of res) {
-        result += prettyprint_locale(loc);
-        result += "\n";
-    }
-    return result;
+    return res.map(locale => prettyprint_locale(locale)).join('\n');
 }
 
 function prettyprint_locale(locale: Locale): string {
     return `Name: ${locale.name}
 Country: ${locale.country}
 Latitude: ${locale.lat}
-Longitude: ${locale.lon}
-`;
+Longitude: ${locale.lon}`;
 }
 
 
