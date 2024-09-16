@@ -15,7 +15,7 @@ This repository never had the key committed to it.
 
 # Example inputs
 
-The menu has some default options, PA and MO specifically since I'm in PA and Copeland is in MO.
+The menu has some default options, PA and MO specifically since I'm in PA and the company is in MO.
 
 I like McMurdo Station, AQ, because it might snow there (it's in Antarctica), and we're unlikely to see the snow output otherwise.
 
