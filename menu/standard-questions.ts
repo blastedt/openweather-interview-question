@@ -30,6 +30,25 @@ export async function units(): Promise<UNIT> {
     })
 }
 
+export async function coordinates(): Promise<[lat: number, lon: number]> {
+    const lat = await inquirer.number({
+        message: "Latitude",
+        required: true,
+        min: -90,
+        max: 90,
+        step: 'any'
+    });
+    const long = await inquirer.number({
+        message: "Latitude",
+        required: true,
+        min: -180,
+        max: 180,
+        step: 'any'
+    });
+
+    return [lat!, long!]; // using ! assertion because required is true
+}
+
 export async function country() {
     let country: string = await inquirer.select({
         message: "Country",

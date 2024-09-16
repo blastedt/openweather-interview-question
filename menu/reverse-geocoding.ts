@@ -1,5 +1,6 @@
 import { Locale, reverse_geocode } from "../api/reverse-geocoding";
 import * as inquirer from "@inquirer/prompts";
+import * as standard from './standard-questions';
 
 function prettyprint_locale_list(res: Locale[]): string {
     let result = "";
@@ -20,22 +21,7 @@ Longitude: ${locale.lon}
 
 
 export async function menu(apikey: string) {
-    const lat = await inquirer.input({
-        message: "Latitude",
-        required: true,
-        validate: (lat) => {
-            const num = Number(lat)
-            return (!isNaN(num) && num >= -90 && num <= 90) || "Enter a number from -90 to 90."
-        }
-    });
-    const long = await inquirer.input({
-        message: "Longitude",
-        required: true,
-        validate: (long) => {
-            const num = Number(long)
-            return (!isNaN(num) && num >= -180 && num <= 180) || "Enter a number from -180 to 180."
-        }
-    });
+    const [lat, long] = await standard.coordinates();
     const limit = await inquirer.input({
         message: "Maximum number of results",
         required: false,
@@ -46,7 +32,7 @@ export async function menu(apikey: string) {
         }
     });
 
-    const result = await reverse_geocode(apikey, lat, long, limit);
+    const result = await reverse_geocode(apikey, lat.toString(), long.toString(), limit);
 
     console.log(prettyprint_locale_list(result))
 }

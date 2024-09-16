@@ -1,6 +1,6 @@
 # Running
 
-`npm run run`
+`npm run run` to compile and run the app.
 
 # API Key configuration
 
